@@ -54,7 +54,7 @@ class App : Application() {
 4. Add `AdPlayerPlacementView` in the code:
 ```kotlin
 val view = AdPlayerPlacementView(it)
-view.attachPlayerTag(BuildConfig.AV_TAG_ID)
+view.attachPlayerTag("YOUR TAG ID")
 
 parent.addView(view) // do something with the view
 ```

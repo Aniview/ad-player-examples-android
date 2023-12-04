@@ -30,7 +30,7 @@ dependencyResolutionManagement {
 2. Add Maven dependencies in the app's `build.gradle.kts` file:
 ```kts
 dependencies {
-    implementation("com.adservrs:adplayer:1.7.9")
+    implementation("com.adservrs:adplayer:1.7.10")
 }
 ```
 

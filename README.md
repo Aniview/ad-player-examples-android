@@ -30,7 +30,7 @@ dependencyResolutionManagement {
 2. Add Maven dependencies in the app's `build.gradle.kts` file:
 ```kts
 dependencies {
-    implementation("com.adservrs:adplayer:1.7.13")
+    implementation("com.adservrs:adplayer:1.7.14")
 }
 ```
 
@@ -67,4 +67,15 @@ parent.addView(view) // do something with the view
         android:layout_height="wrap_content"
         app:player_tag="YOUR TAG ID"
         />
+```
+
+## Removing sentry dependence
+In case built-in Sentry crash reporting is not needed, it can be removed from the project:
+
+```kts
+dependencies {
+    implementation("com.adservrs:adplayer:{version}") {
+        exclude(group = "io.sentry", module = "sentry-android")
+    }
+}
 ```

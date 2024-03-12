@@ -32,7 +32,7 @@ dependencyResolutionManagement {
 2. Add Maven dependencies in the app's `build.gradle.kts` file:
 ```kts
 dependencies {
-    implementation("com.adservrs:adplayer:1.7.20")
+    implementation("com.adservrs:adplayer:1.7.21")
 }
 ```
 
@@ -122,4 +122,32 @@ This code can be used in case application wants to override default behaviour:
 ```kotlin
 AdPlayer.setGdprRequired(true)
 AdPlayer.setGdprConsentString("...")
+```
+
+## Changing in-stream content
+In-stream content can be replaced with some custom content:
+
+```kotlin
+val tag: AdPlayerTag = TODO()
+val configItem: JSONObject = TODO()
+
+tag.preloadVideoAsync()
+tag.updateContentList(JSONArray().also { it.put(configItem) })
+```
+
+Alternatively items in the content playlist can be inserted or removed:
+```kotlin
+val tag: AdPlayerTag = TODO()
+val configItem: JSONObject = TODO()
+
+tag.preloadVideoAsync()
+tag.addContentAt(5, configItem)
+tag.removeContentAt(2)
+```
+
+Example of the config item:
+```json
+{
+  "url": "https://sample-videos.com/video321/mp4/720/big_buck_bunny_720p_1mb.mp4"
+}
 ```

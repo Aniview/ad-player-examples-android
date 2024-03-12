@@ -4,8 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
@@ -14,9 +16,11 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.viewinterop.AndroidView
-import com.adservrs.adplayer.placements.AdPlayerPlacementView
+import com.aniview.example.examples.SimpleExample
+import com.aniview.example.examples.UpdateContentListExample
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,12 +53,20 @@ private fun Content() {
 
 @Composable
 fun Body(modifier: Modifier = Modifier) {
-    AndroidView(
-        factory = {
-            val view = AdPlayerPlacementView(it)
-            view.attachPlayerTag(BuildConfig.AV_TAG_ID)
-            view
-        },
-        modifier = modifier.fillMaxWidth()
-    )
+    val screen = remember { mutableStateOf<(@Composable (Modifier) -> Unit)?>(null) }
+
+    val screenValue = screen.value
+    if (screenValue != null) {
+        screenValue(modifier)
+        return
+    }
+
+    Column(modifier.fillMaxSize()) {
+        Button(onClick = { screen.value = { SimpleExample(it) } }) {
+            Text("Simple")
+        }
+        Button(onClick = { screen.value = { UpdateContentListExample(it) } }) {
+            Text("UpdateContentList")
+        }
+    }
 }

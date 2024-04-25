@@ -72,18 +72,6 @@ parent.addView(view) // do something with the view
 ```
 
 
-## Removing Sentry dependency
-In case built-in Sentry crash reporting is not needed, it can be removed from the project:
-
-```kts
-dependencies {
-    implementation("com.adservrs:adplayer:{version}") {
-        exclude(group = "io.sentry", module = "sentry-android")
-    }
-}
-```
-
-
 ## Floating views
 Floating views can be displayed when ad placement goes out of the visible screen area.
 

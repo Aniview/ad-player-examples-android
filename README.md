@@ -32,7 +32,7 @@ dependencyResolutionManagement {
 2. Add Maven dependencies in the app's `build.gradle.kts` file:
 ```kts
 dependencies {
-    implementation("com.adservrs:adplayer:1.7.21")
+    implementation("com.adservrs:adplayer:1.8.0")
 }
 ```
 
@@ -71,22 +71,5 @@ parent.addView(view) // do something with the view
         />
 ```
 
-
-## Floating views
-Floating views can be displayed when ad placement goes out of the visible screen area.
-
-To enable such behaviour parent *scope* view (preferably it should be `FrameLayout`) must be provided:
-```kotlin
-val view: AdPlayerPlacementView
-val scope: FrameLayout
-view.setFloatingScope(scope)
-```
-
-Or alternatively *scope* view ID can be provided in xml file:
-```xml
-<com.adservrs.adplayer.placements.AdPlayerPlacementView
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    ...
-    app:floating_scope="@id/ad_placement_scope"
-    />
-```
+## Additional documentation
+Additional documentation can be found on the [Wiki](https://github.com/Aniview/ad-player-examples-android/wiki/AdPlayerTag) page of this repository.

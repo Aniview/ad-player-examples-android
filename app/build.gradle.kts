@@ -15,7 +15,7 @@ val avTagId = checkNotNull(properties.getProperty("av_tag_id")) {
 
 android {
     namespace = "com.aniview.example"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.aniview.example"
@@ -66,7 +66,7 @@ android {
 }
 
 dependencies {
-    implementation("com.adservrs:adplayer:1.7.21")
+    implementation("com.adservrs:adplayer:1.8.0")
 
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")

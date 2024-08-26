@@ -66,7 +66,7 @@ android {
 }
 
 dependencies {
-    implementation("com.adservrs:adplayer:1.8.1")
+    implementation("com.adservrs:adplayer:1.9.0")
 
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")

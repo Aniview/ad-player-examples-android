@@ -72,4 +72,4 @@ parent.addView(view) // do something with the view
 ```
 
 ## Additional documentation
-Additional documentation can be found on the [Wiki](https://github.com/Aniview/ad-player-examples-android/wiki/AdPlayerTag) page of this repository.
+Additional documentation can be found on the [documentation page](https://aniview.github.io/ad-player-examples-android/).

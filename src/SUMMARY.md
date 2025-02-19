@@ -23,5 +23,7 @@
 - [AdPlayerPlacementView](placement/about.md)
   - [About](placement/about.md)
   - [Display Modes](placement/display-modes.md)
+- [Advanced](advanced/manual-mpv-events.md)
+  - [Manual MPV Events](advanced/manual-mpv-events.md)
 
 ---

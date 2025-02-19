@@ -5,6 +5,7 @@
 /local.properties
 /build
 /book
+/app
 /captures
 .externalNativeBuild
 .cxx
